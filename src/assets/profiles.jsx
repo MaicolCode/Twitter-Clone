@@ -1,29 +1,16 @@
 import { useState } from "react";
-export function Profiles({ name }) {
-  let [stateAct, stateBef] = useState({
-    state: "Seguir",
-    background: "#1a1a1a",
-    color: "white",
-  });
+export function Profiles( {name} ) {
+  let [isFollow, setIsFollow] = useState(false);
 
+  const text = isFollow ? "Siguiendo": "Seguir"
+
+  const classButton = isFollow ? "tw-followCard-button is-follow" : "tw-followCard"
   const userName = name
 
-  function state() {
-    if (stateAct.state == "Seguir") {
-      stateBef(
-        (stateAct = {
-          state: "Siguiendo",
-          background: "white",
-          color: "#1a1a1a",
-          class: "cambio",
-        })
-      );
-    }else {
-      stateBef(
-        (stateAct = { state: "Seguir", background: "#1a1a1a", color: "white" })
-      );
-    }
+  const state = ()=>{
+    setIsFollow(!isFollow)
   }
+  
   return (
     <div
       style={{
@@ -46,10 +33,10 @@ export function Profiles({ name }) {
       <section style={{ marginInlineStart: "5%" }}>
         <button
           style={{ minWidth: "auto", height: 50, borderRadius: 50 }}
-          className={stateAct.class}
+          className={classButton}
           onClick={state}>
-          <span className={"msgFollowing"}>{stateAct.state}</span>
-          <span className={"msgRemove"}>Dejar de seguir</span>
+          <span className={"msgFollowing"}>{text}</span>
+          <span className={"textRemove"}>Dejar de seguir</span>
         </button>
       </section>
     </div>

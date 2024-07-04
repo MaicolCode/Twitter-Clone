@@ -23,7 +23,7 @@ a:hover {
 }
 
 body {
-  margin:0;
+  margin: 0;
   padding-left: 100px;
   display: flex;
   place-items: center;
@@ -38,6 +38,7 @@ h1 {
 
 button {
   border-radius: 8px;
+  width: 170px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -48,26 +49,29 @@ button {
   transition: border-color 0.25s;
 }
 
-
 button:hover {
   border-color: #646cff;
 }
 
-.msgRemove {
+.tw-followCard-button {
+  background: #1a1a1a;
+  color: white;
+  width: 170px;
+}
+
+.tw-followCard-button.is-follow:hover .msgFollowing {
   display: none;
 }
 
-.cambio:hover .msgRemove{
+.tw-followCard-button.is-follow:hover .textRemove {
   display: block;
 }
 
-button .msgRemove:hover .msgFollowing {
+.textRemove {
   display: none;
 }
 
-
-
-.cambio:hover {
+.is-follow:hover {
   border-color: rgb(129, 5, 5);
   background: #34191969;
   color: red;
