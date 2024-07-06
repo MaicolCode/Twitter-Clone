@@ -65,9 +65,9 @@
 }
 
 .is-follow:hover {
-  border-color: rgb(129, 5, 5);
-  background: #34191969;
-  color: red;
+  border-color: rgb(0, 255, 102);
+  background: #19341c69;
+  color: rgb(0, 255, 102);
 }
 
 @media (prefers-color-scheme: light) {
@@ -85,4 +85,6 @@
 
 .more-users {
   padding: 20px 10px;
+  text-decoration: none;
+  color: rgb(0, 255, 102);
 }
