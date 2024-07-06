@@ -1,45 +1,35 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-export function Profiles({ name } ) {
-  let [isFollow, setIsFollow] = useState(false);
+// eslint-disable-next-line react/prop-types
+export function ProfilesTwitter({ name }) {
+  let [isFollow, setIsFollow] = useState(false)
 
-  const text = isFollow ? "Siguiendo": "Seguir"
+  const text = isFollow ? 'Siguiendo' : 'Seguir'
 
-  const classButton = isFollow ? "tw-followCard-button is-follow" : "tw-followCard"
+  const classButton = isFollow
+    ? 'tw-followCard-button is-follow'
+    : 'tw-followCard-button'
   const userName = name
 
-  const state = ()=>{
+  const state = () => {
     setIsFollow(!isFollow)
   }
-  
+
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        alignItems: "center",
-        marginTop: 10,
-      }}>
-      <article style={{ display: "flex", alignItems: "center" }}>
-        <img
-          alt={ name }
-          src={`https://unavatar.io/${name}`}
-          style={{ width: 60, height: 60, borderRadius: 100 }}
-        />
-        <section style={{ lineHeight: 0.5, marginInlineStart: 10 }}>
-          <h2>{ userName }</h2>
-          <h4>@{ name }</h4>
-        </section>
-      </article>
-      <section style={{ marginInlineStart: "5%" }}>
-        <button
-          style={{ minWidth: "auto", height: 50, borderRadius: 50 }}
-          className={classButton}
-          onClick={state}>
-          <span className={"msgFollowing"}>{text}</span>
-          <span className={"textRemove"}>Dejar de seguir</span>
+    <div className="content-card">
+      <header className="tw-header">
+        <img alt={name} src={`https://unavatar.io/${name}`} className="tw-Avatar" />
+        <div className="tw-info">
+          <strong>{userName}</strong>
+          <span>@{name}</span>
+        </div>
+      </header>
+      <aside>
+        <button className={classButton} onClick={state}>
+          <span className={'msgFollowing'}>{text}</span>
+          <span className={'textRemove'}>Dejar de seguir</span>
         </button>
-      </section>
+      </aside>
     </div>
-  );
+  )
 }

@@ -1,42 +1,88 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+.tw-Card {
+  width: 35vh;
+  border: 2px solid white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  h2 {
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: lighter;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.content-card {
+  padding: 0px 12px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+  justify-content: space-between;
+}
+
+.tw-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tw-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tw-Avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 1000px;
+}
+
+.tw-followCard-button {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: black;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: 1px solid #000;
+  transition: 0.3s ease background-color;
+}
+
+.tw-followCard-button.is-follow:hover .msgFollowing {
+  display: none;
+}
+
+.tw-followCard-button.is-follow:hover .textRemove {
+  font-size: 12px;
+  display: block;
+}
+
+.textRemove {
+  display: none;
+}
+
+.is-follow:hover {
+  border-color: rgb(129, 5, 5);
+  background: #34191969;
+  color: red;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.more-users {
+  padding: 20px 10px;
 }
