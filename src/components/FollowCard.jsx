@@ -1,4 +1,4 @@
-import {ProfilesTwitter} from '../assets/Profiles'
+import {ProfilesTwitter} from '../assets/ProfilesTw.jsx'
 
 export function TwitterCard () {
     return (

@@ -27,8 +27,8 @@ export function ProfilesTwitter({ name }) {
       
       <aside>
         <button className={classButton} onClick={state}>
-          <span className={'msgFollowing'}>{text}</span>
-          <span className={'textRemove'}>Dejar de seguir</span>
+          <label className={'msgFollowing'}>{text}</label>
+          <label className={'textRemove'}>Dejar de seguir</label>
         </button>
       </aside>
     </div>
